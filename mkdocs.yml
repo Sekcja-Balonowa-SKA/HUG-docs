@@ -1,0 +1,16 @@
+site_name: High-altitiude Universal Gondola
+site_description: Modular stratospheric balloon platform
+site_author: Balloon Section WUT
+
+theme:
+  name: material
+  palette:
+    scheme: slate
+
+nav:
+  - Home: index.md
+  - CONOPS: conops.md
+  - Architecture: architecture.md
+  - Requirements: requirements.md
+  - Payload Interface: payload-interface.md
+  - Operations: operations.md
