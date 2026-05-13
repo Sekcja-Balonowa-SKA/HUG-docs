@@ -36,13 +36,9 @@ HUG is a reusable modular stratospheric balloon platform intended to support sci
 
 The platform separates reusable flight infrastructure from mission-specific payload implementation.
 
-<p align="center">
-  <img src="/assets/diagrams/high-level-architecture.png" alt="HUG High-Level System Architecture">
-</p>
+![HUG High-Level System Architecture](../assets/diagrams/high-level-architecture.png)
 
-<p align="center">
-  <em>Figure 1 — HUG High-Level System Architecture</em>
-</p>
+*Figure 1 — HUG High-Level System Architecture*
 
 The system consists of three primary architectural domains:
 
