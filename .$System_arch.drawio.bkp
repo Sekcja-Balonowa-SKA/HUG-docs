@@ -1,0 +1,31 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.17 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.17">
+  <diagram name="Strona-1" id="03Lk03nn6I-TH4FL8dkp">
+    <mxGraphModel dx="954" dy="657" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Fo8x0Ofj0QTgTQ94AgsC-1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="100" width="560" height="500" as="geometry" />
+        </mxCell>
+        <mxCell id="Fo8x0Ofj0QTgTQ94AgsC-3" value="&lt;font style=&quot;font-size: 23px;&quot;&gt;&lt;b&gt;HUG Gondola&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="215" y="90" width="430" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="Fo8x0Ofj0QTgTQ94AgsC-4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="172" y="280" width="316" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="Fo8x0Ofj0QTgTQ94AgsC-6" value="&lt;font style=&quot;font-size: 17px;&quot;&gt;&lt;b&gt;Platform Core&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="170" y="280" width="320" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Fo8x0Ofj0QTgTQ94AgsC-7" value="Flight Computer" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="320" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Fo8x0Ofj0QTgTQ94AgsC-8" value="RF Communication Board" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="500" width="100" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="Fo8x0Ofj0QTgTQ94AgsC-10" value="Sensor Board" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="190" y="410" width="100" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

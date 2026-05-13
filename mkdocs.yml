@@ -1,5 +1,5 @@
-site_name: High-altitiude Universal Gondola
-site_description: Modular stratospheric balloon platform
+site_name: HUG Documentation
+site_description: High-Altitude Universal Gondola Platform
 site_author: Balloon Section WUT
 
 theme:
@@ -9,8 +9,23 @@ theme:
 
 nav:
   - Home: index.md
-  - CONOPS: conops.md
-  - Architecture: architecture.md
-  - Requirements: requirements.md
-  - Payload Interface: payload-interface.md
-  - Operations: operations.md
+
+  - Mission:
+      - CONOPS: mission/conops.md
+
+  - Architecture:
+      - Platform Architecture: architecture/platform-architecture.md
+
+  - Requirements:
+      - Overview: requirements/overview.md
+
+  - Interfaces:
+      - Payload Interface: interfaces/payload-interface.md
+      - Electrical Interface: interfaces/electrical-interface.md
+      - Communication Interface: interfaces/communication-interface.md
+      - Mechanical Interface: interfaces/mechanical-interface.md
+
+  - Operations:
+      - Launch Operations: operations/launch-operations.md
+      - Recovery Operations: operations/recovery-operations.md
+      - Ground Segment: operations/ground-segment.md
