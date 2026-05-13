@@ -1,0 +1,1299 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="High-Altitude Universal Gondola Platform">
+      
+      
+        <meta name="author" content="Balloon Section WUT">
+      
+      
+      
+        <link rel="prev" href="../../architecture/platform-architecture/">
+      
+      
+        <link rel="next" href="../../interfaces/payload-interface/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Level 0 System Requirements - HUG Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#level-0-system-requirements" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="HUG Documentation" class="md-header__button md-logo" aria-label="HUG Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            HUG Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Level 0 System Requirements
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="HUG Documentation" class="md-nav__button md-logo" aria-label="HUG Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    HUG Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mission
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mission
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mission/conops/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CONOPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../architecture/platform-architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Requirements
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Requirements
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Level 0 System Requirements
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaces
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Interfaces
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/payload-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Payload Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/electrical-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Electrical Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/communication-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Communication Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interfaces/mechanical-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mechanical Interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operations
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Operations
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/launch-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Launch Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/recovery-operations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Recovery Operations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../operations/ground-segment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ground Segment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="level-0-system-requirements">Level 0 System Requirements</h1>
+<p>Version: Draft v0.1<br />
+Project: HUG — High-Altitude Universal Gondola<br />
+Organization: Balloon Section, Students’ Space Association, Warsaw University of Technology</p>
+<hr />
+<h1 id="1-purpose">1. Purpose</h1>
+<p>This document defines the Level 0 system requirements for the HUG platform in compliance with ECSS-inspired requirement classification methodology.</p>
+<p>The requirements define top-level mission, operational, environmental, interface, and platform capabilities independently from subsystem implementation.</p>
+<p>Detailed subsystem and implementation requirements shall be derived in Level 1 and Level 2 specifications.</p>
+<hr />
+<h1 id="2-requirement-philosophy">2. Requirement Philosophy</h1>
+<p>The Level 0 requirements define:</p>
+<ul>
+<li>mission objectives,</li>
+<li>operational capabilities,</li>
+<li>environmental constraints,</li>
+<li>payload support capabilities,</li>
+<li>safety and recovery objectives,</li>
+<li>platform-level performance expectations.</li>
+</ul>
+<p>Requirements are categorized according to ECSS-inspired requirement classes.</p>
+<hr />
+<h1 id="3-requirement-classification">3. Requirement Classification</h1>
+<table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Category</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RI</td>
+<td>Interface</td>
+<td>Relationship characteristics between the product and external/internal items</td>
+</tr>
+<tr>
+<td>RE</td>
+<td>Environmental</td>
+<td>Environmental conditions during operation</td>
+</tr>
+<tr>
+<td>RF</td>
+<td>Functional</td>
+<td>Functions the system shall perform</td>
+</tr>
+<tr>
+<td>RD</td>
+<td>Design</td>
+<td>Imposed design and construction requirements</td>
+</tr>
+<tr>
+<td>RO</td>
+<td>Operational</td>
+<td>Operational usage and procedures</td>
+</tr>
+<tr>
+<td>RH</td>
+<td>Human Factor</td>
+<td>Human interaction and usability</td>
+</tr>
+<tr>
+<td>RL</td>
+<td>Logistics</td>
+<td>Logistics and deployment constraints</td>
+</tr>
+<tr>
+<td>RP</td>
+<td>Physical / Performance</td>
+<td>Physical or quantifiable performance characteristics</td>
+</tr>
+<tr>
+<td>RC</td>
+<td>Configuration</td>
+<td>Product composition and organizational constraints</td>
+</tr>
+<tr>
+<td>RV</td>
+<td>Verification</td>
+<td>Verification and validation requirements</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="4-functional-requirements">4. Functional Requirements</h1>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RF.001</td>
+<td>The HUG platform shall operate as a reusable modular stratospheric balloon gondola platform.</td>
+</tr>
+<tr>
+<td>RF.002</td>
+<td>The HUG platform shall support integration and operation of hosted scientific and technological payloads.</td>
+</tr>
+<tr>
+<td>RF.003</td>
+<td>The HUG platform shall support autonomous operation throughout the complete mission duration.</td>
+</tr>
+<tr>
+<td>RF.004</td>
+<td>The HUG platform shall provide real-time mission telemetry transmission.</td>
+</tr>
+<tr>
+<td>RF.005</td>
+<td>The HUG platform shall support telecommand reception during mission operation.</td>
+</tr>
+<tr>
+<td>RF.006</td>
+<td>The HUG platform shall record mission telemetry throughout the complete mission duration.</td>
+</tr>
+<tr>
+<td>RF.007</td>
+<td>The HUG platform shall support post-flight mission reconstruction.</td>
+</tr>
+<tr>
+<td>RF.008</td>
+<td>The HUG platform shall support recovery tracking during descent and post-landing operations.</td>
+</tr>
+<tr>
+<td>RF.009</td>
+<td>The HUG platform shall support onboard data storage during communication loss conditions.</td>
+</tr>
+<tr>
+<td>RF.010</td>
+<td>The HUG platform shall support flight termination operations.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="5-interface-requirements">5. Interface Requirements</h1>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RI.001</td>
+<td>The HUG platform shall provide standardized mechanical payload integration interfaces.</td>
+</tr>
+<tr>
+<td>RI.002</td>
+<td>The HUG platform shall provide standardized electrical power interfaces for hosted payloads.</td>
+</tr>
+<tr>
+<td>RI.003</td>
+<td>The HUG platform shall provide standardized communication interfaces for hosted payloads.</td>
+</tr>
+<tr>
+<td>RI.004</td>
+<td>The HUG platform shall support bidirectional RF communication with the ground segment.</td>
+</tr>
+<tr>
+<td>RI.005</td>
+<td>The HUG platform shall support payload communication through Ethernet and/or Wi-Fi interfaces.</td>
+</tr>
+<tr>
+<td>RI.006</td>
+<td>The HUG platform shall support integration with balloon, parachute, and suspended payload systems.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="6-environmental-requirements">6. Environmental Requirements</h1>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RE.001</td>
+<td>The HUG platform shall operate within external ambient temperatures from −50 °C to +50 °C.</td>
+</tr>
+<tr>
+<td>RE.002</td>
+<td>The HUG platform shall operate within low-pressure stratospheric conditions.</td>
+</tr>
+<tr>
+<td>RE.003</td>
+<td>The HUG platform shall withstand condensation, frost, and rapid temperature transitions during mission operation.</td>
+</tr>
+<tr>
+<td>RE.004</td>
+<td>The HUG platform shall maintain nominal electronics operation within the specified environmental conditions.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="7-operational-requirements">7. Operational Requirements</h1>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RO.001</td>
+<td>The HUG platform shall support autonomous operation without continuous external command input.</td>
+</tr>
+<tr>
+<td>RO.002</td>
+<td>The HUG platform shall support mission supervision throughout ascent, float, descent, and recovery phases.</td>
+</tr>
+<tr>
+<td>RO.003</td>
+<td>The HUG platform shall support pre-flight system verification procedures.</td>
+</tr>
+<tr>
+<td>RO.004</td>
+<td>The HUG platform shall maintain operational telemetry transmission during nominal flight operation.</td>
+</tr>
+<tr>
+<td>RO.005</td>
+<td>The HUG platform shall support safe operation during temporary communication loss.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="8-logistics-requirements">8. Logistics Requirements</h1>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RL.001</td>
+<td>The HUG platform shall support launch preparation and deployment within 2 hours of arrival at the launch site.</td>
+</tr>
+<tr>
+<td>RL.002</td>
+<td>The HUG platform shall support post-flight recovery and transportation operations.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="9-physical-and-performance-requirements">9. Physical and Performance Requirements</h1>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RP.001</td>
+<td>The HUG platform total gondola mass shall not exceed 3 kg.</td>
+</tr>
+<tr>
+<td>RP.002</td>
+<td>The HUG platform shall support hosted payload mass up to 2 kg.</td>
+</tr>
+<tr>
+<td>RP.003</td>
+<td>The HUG platform shall provide regulated 3.3 V, 5 V, and 12 V payload power interfaces.</td>
+</tr>
+<tr>
+<td>RP.004</td>
+<td>The HUG platform shall monitor battery voltage and current during mission operation.</td>
+</tr>
+<tr>
+<td>RP.005</td>
+<td>The HUG platform shall support real-time telemetry monitoring.</td>
+</tr>
+<tr>
+<td>RP.006</td>
+<td>The HUG platform shall provide a mission dataset sufficient for reconstruction of mission timeline and operational events.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="10-design-requirements">10. Design Requirements</h1>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RD.001</td>
+<td>The HUG platform architecture shall separate reusable platform infrastructure from hosted payload implementation.</td>
+</tr>
+<tr>
+<td>RD.002</td>
+<td>The HUG platform shall support subsystem extensibility and modular expansion.</td>
+</tr>
+<tr>
+<td>RD.003</td>
+<td>The HUG platform shall support hosted payload operation without modification of the primary load-bearing structure.</td>
+</tr>
+<tr>
+<td>RD.004</td>
+<td>The HUG platform shall provide designated cable routing paths for payload wiring.</td>
+</tr>
+<tr>
+<td>RD.005</td>
+<td>The HUG platform shall define keep-out zones for antennas, sensors, and recovery hardware.</td>
+</tr>
+<tr>
+<td>RD.006</td>
+<td>The HUG platform shall provide external identification markings for recovery purposes.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="11-configuration-requirements">11. Configuration Requirements</h1>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RC.001</td>
+<td>The HUG platform shall support multiple payload integration configurations.</td>
+</tr>
+<tr>
+<td>RC.002</td>
+<td>The HUG platform shall define payload integration constraints including mass, dimensions, mounting interfaces, and connector locations.</td>
+</tr>
+<tr>
+<td>RC.003</td>
+<td>The HUG platform shall support both platform-powered and independently powered payload configurations.</td>
+</tr>
+<tr>
+<td>RC.004</td>
+<td>The HUG platform shall support electrical isolation between payload systems and platform-critical services where required.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="12-human-factor-requirements">12. Human Factor Requirements</h1>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RH.001</td>
+<td>The ground segment shall provide real-time telemetry visualization for mission operators.</td>
+</tr>
+<tr>
+<td>RH.002</td>
+<td>The ground segment shall support centralized mission supervision by a single operator workstation.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="13-verification-requirements">13. Verification Requirements</h1>
+<table>
+<thead>
+<tr>
+<th>ID</th>
+<th>Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RV.001</td>
+<td>Environmental operating temperature requirements shall be verified by thermal testing.</td>
+</tr>
+<tr>
+<td>RV.002</td>
+<td>Communication functionality shall be verified during integrated mission testing.</td>
+</tr>
+<tr>
+<td>RV.003</td>
+<td>Autonomous mission operation shall be verified during end-to-end flight simulations or flight tests.</td>
+</tr>
+<tr>
+<td>RV.004</td>
+<td>Payload integration interfaces shall be verified during mechanical and electrical integration testing.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="14-requirement-allocation-philosophy">14. Requirement Allocation Philosophy</h1>
+<p>The Level 0 requirements defined in this document establish the top-level system capabilities and constraints of the HUG platform.</p>
+<p>Subsequent documentation phases shall derive:</p>
+<ul>
+<li>Level 1 subsystem requirements,</li>
+<li>interface control requirements,</li>
+<li>verification procedures,</li>
+<li>implementation-specific requirements.</li>
+</ul>
+<p>Derived requirements shall maintain bidirectional traceability to Level 0 requirements where applicable.</p>
+<hr />
+<h1 id="15-conclusion">15. Conclusion</h1>
+<p>This document defines the initial ECSS-inspired Level 0 system requirements for the HUG platform.</p>
+<p>The requirements establish the mission-level operational objectives, environmental constraints, payload support capabilities, and platform characteristics necessary to guide subsequent system architecture definition and subsystem development.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
